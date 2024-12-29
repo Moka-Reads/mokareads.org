@@ -1,2 +1,3 @@
-# zine-ssg.io
-The official website for https://github.com/kristoff-it/zine
+# MoKa Reads
+
+The official website for the MoKa Reads Foundation

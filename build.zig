@@ -13,7 +13,7 @@ pub fn build(b: *std.Build) !void {
             // This asset is referenced in some inlined HTML in markdown
             // which Zine is not yet able to analyze so as a temporary
             // hack we mark it as a static asset.
-            "vscode-autoformatting.mp4",
+            // "vscode-autoformatting.mp4",
 
             // Fonts referenced in CSS files
             "fonts/BebasNeue-Regular.ttf",

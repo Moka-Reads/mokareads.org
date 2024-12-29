@@ -39,9 +39,9 @@ SuperHTML is designed to help you write correct HTML by catching mistakes early.
 
 It is [my](/community) belief that people resort to using JSX for creating static websites even when they don't really have any frontend SPA (Single Page Application) need because the experience of editing vanilla HTML is objectively worse.
 
-To this point: as part of my work to create SuperHTML, I wrote an HTML parser from scratch that then I used to implement a [language server for HTML](https://github.com/kristoff-it/superhtml). 
+To this point: as part of my work to create SuperHTML, I wrote an HTML parser from scratch that then I used to implement a [language server for HTML](https://github.com/kristoff-it/superhtml).
 
-While doing so I discovered that, **as of spring of 2024, no other HTML language server that reports syntax errors exists**. 
+While doing so I discovered that, **as of spring of 2024, no other HTML language server that reports syntax errors exists**.
 
 Some proprietary text editors do have support for reporting HTML syntax errors, and one HTML language server does exist: the one that comes with VSCode (also used by other editors), but it doesn't report errors for malformed HTML.
 
@@ -57,12 +57,11 @@ server for receiving immediate feedback on syntax errors.
 **The SuperHTML language server also supports normal HTML.**
 
 ># [Diagnostics]($block.attrs('nopara'))
->![](/superhtml.png)
+
 
 The language server also has a Zig-style autoformatter:
 
 ># [Autoformatting]($block.attrs('nopara'))
->[]($video.siteAsset('vscode-autoformatting.mp4').attrs("big").loop(true).controls(true).muted(true).pip(false).autoplay(true))
 
 
 Checkout [kristoff-it/superhtml](https://github.com/kristoff-it/superhtml) for
@@ -88,11 +87,11 @@ Any HTML attribute can be scripted (with some restrictions explained later in th
 
 SuperHTML defines a list of special attributes that drive templating logic.
 
-### `:text` 
+### `:text`
 The `:text` attribute sets the content of an element to the result of its Scripty expression. The value is HTML-escaped before printing.
 
-The expression must evaluate to either 
-[`String`]($link.page('docs/superhtml/scripty').ref('String')) 
+The expression must evaluate to either
+[`String`]($link.page('docs/superhtml/scripty').ref('String'))
 or
 [`Int`]($link.page('docs/superhtml/scripty').ref('Int')).
 
@@ -127,21 +126,21 @@ Same as `:text`, but it doesn't escape HTML. Avoid using it with untrusted data.
 
 
 ### `:if`
-Toggles the body of an element based on the value of its Scripty expression. 
+Toggles the body of an element based on the value of its Scripty expression.
 
-The expression must evaluate to either 
-[`Bool`]($link.page('docs/superhtml/scripty').ref('Bool')) 
+The expression must evaluate to either
+[`Bool`]($link.page('docs/superhtml/scripty').ref('Bool'))
 or
 [`?any`]($link.page('docs/superhtml/scripty').ref('any')).
 
 The second kind of value (`?any`) is an *optional* value. You can get an optional value for example by trying to access a custom field in a page frontmatter, or when trying to access the `next` page.
 
-Optional values can either be present or missing. 
+Optional values can either be present or missing.
 
 When the value is missing, the `:if` attribute evaluates to `false` and the body of the element is elided.
 
-When the value is present, it becomes available as the 
-[`$if`]($link.page('docs/superhtml/scripty')) 
+When the value is present, it becomes available as the
+[`$if`]($link.page('docs/superhtml/scripty'))
 Scripty global variable.
 
 ***template.shtml***
@@ -167,8 +166,8 @@ Evaluates the body of an element once for every element in the value of its Scri
 
 The expression must evaluate to `[any]`.
 
-The iterator becomes available as the 
-[`$loop`]($link.page('docs/superhtml/scripty')) 
+The iterator becomes available as the
+[`$loop`]($link.page('docs/superhtml/scripty'))
 Scripty global variable.
 
 ***template.shtml***
@@ -189,7 +188,7 @@ Scripty global variable.
 </ul>
 ```
 
-In nested loops the inner iterator will shadow the outer `$loop`, but you can use 
+In nested loops the inner iterator will shadow the outer `$loop`, but you can use
 [`$loop.up()`]($link.page('docs/superhtml/scripty').ref('Iterator'))
 to access it.
 
@@ -215,7 +214,7 @@ One use of this property is to put text at a specific location of an element:
 </div>
 ```
 
-A second important property of `<ctx>` is that any attribute defined on it will become available as a field of the 
+A second important property of `<ctx>` is that any attribute defined on it will become available as a field of the
 [`$ctx`]($link.page('docs/superhtml/scripty').ref('Ctx'))
 Scripty global variable.
 
@@ -232,7 +231,7 @@ Scripty global variable.
 <a href="about/">About</a>
 ```
 
-Nested instances of `<ctx>` will have all their attributes merged in `$ctx` (i.e. there is no `up` function). 
+Nested instances of `<ctx>` will have all their attributes merged in `$ctx` (i.e. there is no `up` function).
 
 Shadowing is not allowed for `<ctx>` attributes and will be reported as an error if two definitions of the same attribute are active in the same scope.
 
@@ -283,7 +282,7 @@ Let's continue the example from the main documentation page, where we wanted to 
   <h2 :text="$page.title"></h2>
   <h3>by <span :text="$page.author"></span></h3>
   <h4>
-    Posted on: 
+    Posted on:
     <span :text="$page.date.format('January 02, 2006')">
     </span>
   </h4>
@@ -298,7 +297,7 @@ Let's analyze what we just saw:
 - both layouts now start with an `<extend>` tag and have lost their original structure (since it was collected in `base.shtml`), keeping only the parts that each defines differently than the other.
 
 ### `<extend>`
-When a layout wants to extend a template, it must declare at the very top the template name using the extend tag, like so: 
+When a layout wants to extend a template, it must declare at the very top the template name using the extend tag, like so:
 
 ```superhtml
 <extend template="foo.shtml">
@@ -419,7 +418,7 @@ trace:
 ```
 
 So, if we were to give `id`s to super tags, we would have to introduce another
-fake html tag and we would end up with the same problem that curly brace templating 
+fake html tag and we would end up with the same problem that curly brace templating
 languages have today.
 
 ***where would this go?***
@@ -445,7 +444,7 @@ in a sense.
 
 ## Extension chains
 
-In the previous section we saw how a template can extend another. We are now 
+In the previous section we saw how a template can extend another. We are now
 going to see what longer extension chains look like.
 
 At this point it's also useful to think of templates as documents that can do two things:
@@ -453,7 +452,7 @@ At this point it's also useful to think of templates as documents that can do tw
 - Define an interface by using `<super>`.
 - Fulfill an interface by extending another template and definig top-level elements that match corresponding blocks in the template they extend.
 
-Let's see an example: 
+Let's see an example:
 
 **`layouts/templates/base.shtml`**
 ```superhtml
@@ -479,7 +478,7 @@ Let's see an example:
   <script>console.log("Hello World!");</script>
 </head>
 
-<!-- at the top level only comments 
+<!-- at the top level only comments
      and block definitions are allowed -->
 <body id="body">
     <nav>
@@ -506,6 +505,3 @@ Note how `with-menu.shtml` is both fulfilling the *interface* of `base.shtml` an
 ## Next Steps
 - [Read the SuperHTML Scripty Reference Documentation](./scripty/)
 - [Learn more about Zine's Asset System](assets/)
-
-
-

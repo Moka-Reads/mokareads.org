@@ -28,20 +28,22 @@
     <nav id="menu" class="centered">
       <a href="/">Home</a>
       •
-      <a href="$site.page('quickstart').link()">Get Started</a>
+      <a href="https://blog.mokareads.org">Blog</a>
       •
-      <a href="$site.page('docs').link()">Documentation</a>
+      <a href="$site.page('quickstart').link()">Current Research</a>
       •
-      <a href="$site.page('community').link()">Community</a>
+      <a href="$site.page('docs').link()">Projects</a>
       •
-      <a href="$site.page('log').link()">Devlog</a>
+      <a href="$site.page('community').link()">Papers</a>
       •
-      <a href="https://github.com/kristoff-it/zine" target="_blank">
+      <a href="$site.page('log').link()">Donate</a>
+
+      <!-- <a href="https://github.com/kristoff-it/zine" target="_blank">
         Code
-      </a>
+      </a> -->
     </nav>
     <div id="content">
-      <super>
+    <super>
     </div>
   </body>
 </html>
