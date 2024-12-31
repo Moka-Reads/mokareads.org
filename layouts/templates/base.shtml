@@ -2,21 +2,15 @@
 <html>
   <head id="head">
     <meta charset="UTF-8">
-    <meta name="description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
+    <meta name="description" content="MoKa Reads: Open Education and Research">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@croloris">
-    <meta name="twitter:author" content="@croloris">
-    <meta name="twitter:description" content="Zine: Fast, Scalable and Flexible Static Site Generator">
-    <meta name="twitter:title" content="$page.title.suffix(' | Zine')">
-    <meta name="twitter:image" content="$site.host_url.addPath($site.asset('preview.png').link())">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="$page.title.suffix(' | Zine')">
-    <meta property="og:image" content="$site.host_url.addPath($site.asset('preview.png').link())">
+    <meta property="og:title" content="$page.title.suffix(' | MoKa Reads')">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title id="title">
       <super>
-      - Zine
+      - MoKa Reads
     </title>
     <link rel="stylesheet" type="text/css" href="$site.asset('fonts.css').link()">
     <link rel="stylesheet" type="text/css" href="$site.asset('fira_code.css').link()">
@@ -30,17 +24,15 @@
       •
       <a href="https://blog.mokareads.org">Blog</a>
       •
-      <a href="$site.page('quickstart').link()">Current Research</a>
+      <a href="https://shop.mokareads.org">Shop</a>
       •
-      <a href="$site.page('docs').link()">Projects</a>
+      <a href="$site.page('research').link()">Research</a>
       •
-      <a href="$site.page('community').link()">Papers</a>
+      <a href="$site.page('proj').link()">Projects</a>
+      <!-- •
+      <a href="$site.page('papers').link()">Papers</a> -->
       •
-      <a href="$site.page('log').link()">Donate</a>
-
-      <!-- <a href="https://github.com/kristoff-it/zine" target="_blank">
-        Code
-      </a> -->
+      <a href="$site.page('support').link()">Donate</a>
     </nav>
     <div id="content">
     <super>

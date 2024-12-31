@@ -32,7 +32,7 @@
 		border-bottom: 1px dashed #aaa;
 		margin-top: 2em;
 	}
-	
+
 	#reference h3 {
 		margin-top: 2em;
 		background-color: #222;
@@ -54,7 +54,7 @@
 		border: 1px solid #ccc;
 		padding-top: 2px;
 	}
-	
+
 	html {
 		scroll-padding-top: 50px;
 	}
@@ -73,7 +73,7 @@
 	    background-color: #222;
 	  }
 	}
-	
+
 	div[id]:target {
 	  animation: pulse-div 2s ease-in-out 1;
 	}
@@ -89,7 +89,7 @@
 	  }
 	}
   </style>
-  <h3 class="centered">Zine</h3>
+  <h3 class="centered">MoKa Reads</h3>
   <h1 :text="$page.title"></h1>
   <div id="reference" :html="$page.content()"></div>
 </div>
