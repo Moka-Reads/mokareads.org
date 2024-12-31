@@ -8,7 +8,44 @@
 
 ## Mufi-Lang
 
+Mufi-Lang is a general-purpose, dynamic object-oriented toy language using a bytecode compiler
+and features a standard library, alongside being built under the Zig build system.
+This allows for better memory safety, error handling, cross compatibility, and easier development.
+
+- Mufi-Lang aims to be a general-purpose language but with a focus on mathematical applications.
+- Mufi-Lang is experimental and is not meant to be used in production.
+- We hope to release research papers based on different ways we can improve the language, and
+things that can be implemented.
+    - For example research in efficient Matrix data structure could then be implemented in
+    the language and benefit from the research.
+
+### Links
+- [Mufi-Lang GitHub](https://github.com/Mufi-Lang)
+- [Mufi-Lang Compiler MufiZ](https://github.com/Mufi-Lang/MufiZ)
+- [MufiZ Website](https://mufiz.mustafif.com)
 
 ## TexCreate
 
+TexCreate is a LaTeX project creator that utilizes prebuilt templates to allow developers to easily create projects for various cases.
+This is aimed towards developers/students who would like to have an easier time with development on LaTeX.
+
+- TexCreate is my first major project and started back in 2021, and for a long time been a tool
+I would regularly use.
+- TexCreate is no longer being maintained, but still exists as a tool for users to use.
+- Now I use Typst for my publications and papers.
+
 ## QuickFetch
+
+QuickFetch is a library built to handle multiple requests within a Client (reqwest client which will handle it all under a Client Pool) ,
+cache the response results, and handle these asynchronously.
+
+The goal is to be a one-stop shop for handling local package manager development to handle multiple packages with a local cache
+to easily update, get and remove the different responses.
+
+- QuickFetch is experimental and is not meant to be used in production.
+- QuickFetch is built under the Rust programming language and uses the reqwest library for handling requests.
+
+### Links
+
+- [QuickFetch GitHub](https://github.com/Moka-Reads/QuickFetch)
+- [Crates.io](https://crates.io/crates/quickfetch)
