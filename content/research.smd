@@ -59,7 +59,16 @@ The platforms publications will be published on:
 > Research papers will only be available for purchase on the MoKa Reads Shop under a pay-what-you-want model
 > with a minimum amount being the cost of a cup of espresso...$5.00 CAD.
 
+### Optimal Pricing Strategy
 
+Our pricing under these multiple platforms and their various royalty amounts, we prepare a nonlinear optimization
+problem to maximize the royalty per unit in a platform that comes to the cheapest to the reader.
+
+- View our paper on this problem [here](https://github.com/Moka-Reads/optimizing-pricing/blob/main/problem.pdf)
+- Or visit the [Github Repository](https://github.com/Moka-Reads/optimizing-pricing/tree/main)
+
+This also helps us with our goal of transparent pricing of our books, where we can provide the inputs
+which can always be tested with the `optimize_pricing` function defined in the Python implementation.
 
 ## Current Research
 

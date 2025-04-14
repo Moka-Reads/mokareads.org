@@ -26,6 +26,9 @@ things that can be implemented.
 
 ## TexCreate
 
+># [No Longer Maintained]($block.attrs('warning'))
+> This project no longer is maintained
+
 TexCreate is a LaTeX project creator that utilizes prebuilt templates to allow developers to easily create projects for various cases.
 This is aimed towards developers/students who would like to have an easier time with development on LaTeX.
 

@@ -1,10 +1,11 @@
 .{
-    .name = "Zine Website",
+    .name = .mokareads_org,
+    .fingerprint = 0x90fd801e6ef7f7b,
     .version = "0.0.0",
     .dependencies = .{
         .zine = .{
-            .url = "git+https://github.com/kristoff-it/zine?ref=v0.8.0#ec0f549654a4f7183d4520227b6748bba7ade98e",
-            .hash = "122049c99f3faaaff159cdccb3792d1518b10534e8225e26e5b24a369d325b0ebdc5",
+            .url = "https://github.com/kristoff-it/zine/archive/refs/tags/v0.10.1.tar.gz",
+            .hash = "zine-0.9.0-ou6nIM81FgCNHXtoHPbozNhUnNz0jxkcPVDSDgqhE9pt",
         },
     },
     .paths = .{"."},
