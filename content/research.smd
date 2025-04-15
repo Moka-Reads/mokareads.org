@@ -23,6 +23,7 @@
   - Rust
   - Zig
   - C/C++
+  - Swift
   - Mojo
 
 ### Cryptocurrency
@@ -64,11 +65,12 @@ The platforms publications will be published on:
 Our pricing under these multiple platforms and their various royalty amounts, we prepare a nonlinear optimization
 problem to maximize the royalty per unit in a platform that comes to the cheapest to the reader.
 
-- View our paper on this problem [here](https://github.com/Moka-Reads/optimizing-pricing/blob/main/problem.pdf)
-- Or visit the [Github Repository](https://github.com/Moka-Reads/optimizing-pricing/tree/main)
+- Read our [summary](https://github.com/Moka-Reads/optimizing-pricing/releases/download/v1/Platform_Royalties_Summary.pdf)
+- Read our [problem write up](https://github.com/Moka-Reads/optimizing-pricing/releases/download/v1/problem.pdf)
+- Visit our [Github repo](https://github.com/Moka-Reads/optimizing-pricing)
 
-This also helps us with our goal of transparent pricing of our books, where we can provide the inputs
-which can always be tested with the `optimize_pricing` function defined in the Python implementation.
+The goal of this problem is to promote transparency over how our publication prices are determined, and under our summary
+we provide the listed MSRPs of our publications per platform under CAD.
 
 ## Current Research
 
