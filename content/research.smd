@@ -32,18 +32,7 @@
   - Ethically as an unregulated market
   - Ideals of decentralization and anonymity
 
-## Paper Development/OpenCode Policy
 
-- All papers will either be developed in LaTeX or Typst, and if contains code sampels will be
-  provided in a repository under the MoKa Reads GitHub organization under the MIT License.
-
-- In terms of the publication, it will be under a Creative Commons license which will allow for
-  the paper to be distributed freely, but not for commercial use, derivative works will depend on
-  the author's discretion.
-
-- Under the OpenCode policy, the manuscript under a general version which may omit ISBNs and acknowledgements,
-  will be released on Github under its same license, and either a year to three depending if a standalone, edition of a book,
-  or a research paper.
 
 
 ## Publishing Platforms
@@ -56,22 +45,12 @@ The platforms publications will be published on:
 - Kobo (Ebook)
 - Barnes and Noble (Ebook and Print)
 
-># [Research Paper Exclusivity]($block.attrs('error'))
-> Research papers will only be available for purchase on the MoKa Reads Shop under a pay-what-you-want model
+># [Research/Academic Paper Exclusivity]($block.attrs('error'))
+> Research/Academic papers will only be available for purchase on the MoKa Reads Shop under a pay-what-you-want model
 > with a minimum amount being the cost of a cup of espresso...$5.00 CAD.
 
-### Optimal Pricing Strategy
-
-Our pricing under these multiple platforms and their various royalty amounts, we prepare a nonlinear optimization
-problem to maximize the royalty per unit in a platform that comes to the cheapest to the reader.
-
-- Read our [summary](https://github.com/Moka-Reads/optimizing-pricing/releases/download/v1/Platform_Royalties_Summary.pdf)
-- Read our [problem write up](https://github.com/Moka-Reads/optimizing-pricing/releases/download/v1/problem.pdf)
-- Visit our [Github repo](https://github.com/Moka-Reads/optimizing-pricing)
-
-The goal of this problem is to promote transparency over how our publication prices are determined, and under our summary
-we provide the listed MSRPs of our publications per platform under CAD.
 
 ## Current Research
 
-We will have more information on our current research projects soon. Stay tuned!
+- [Optimizing Pricing Strategy with Royalty Constraints](/research/MK2740US)
+

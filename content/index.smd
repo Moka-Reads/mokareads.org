@@ -8,7 +8,7 @@
 ---
 
 ># [Not-For-Profit Organization]($block.attrs('error'))
-> The MoKa Reads Foundation is operated under a not-for-profit structure
+> The MoKa Reads Collective is operated under a not-for-profit structure
 > and uses its funds to support the development of our open-source projects and research/publications.
 
 ## What is MoKa Reads?
@@ -19,7 +19,7 @@ under an opensource-like nature and develop open-source projects to apply some o
 
 ## Our Mission?
 
-MoKa Reads is founded by Mustafif Khan, who's an independent author/publisher, Financial Mathematician,
+MoKa Reads is founded by Mustafif Khan, who's an independent author/publisher, financial mathematician,
 and open-source developer. His first published book was "Rust for C++ Programmers" and now wants
 to provide a platform which places publications and research papers under opensource licenses, and
 help build something amazing, and help others to learn it.

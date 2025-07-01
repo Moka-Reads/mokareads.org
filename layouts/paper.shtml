@@ -29,9 +29,12 @@
 		}
   </style>
   <br>
-  <h1
-    class="title"
-  >MoKa Reads
-    <span :text="$page.title"></span></h1>
+  <h1 class="title" :text="$page.title"></h1>
+  <h2 class="title">By
+    <span :text="$page.author"></span></h2>
+  <div class="block">
+    <h1>Abstract</h1>
+    <p :text="$page.description"></p>
+  </div>
   <div id="page" :html="$page.content()"></div>
 </div>

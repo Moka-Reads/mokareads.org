@@ -39,6 +39,9 @@ I would regularly use.
 
 ## QuickFetch
 
+># [No Longer Maintained]($block.attrs('warning'))
+> This project no longer is maintained
+
 QuickFetch is a library built to handle multiple requests within a Client (reqwest client which will handle it all under a Client Pool) ,
 cache the response results, and handle these asynchronously.
 
