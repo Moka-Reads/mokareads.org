@@ -30,7 +30,7 @@
       •
       <a href="https://shop.mokareads.org">Shop</a>
       •
-      <a href="$site.page('research').link()">Research</a>
+      <a href="$site.page('pages').link()">Pages</a>
       •
       <a href="$site.page('proj').link()">Projects</a>
       <!-- •

@@ -1,5 +1,5 @@
 ---
-.title = "Research",
+.title = "Pages",
 .date = @date("2024-12-29T00:00:00"),
 .author = "Mustafif Khan",
 .layout = "page.shtml",
@@ -34,7 +34,6 @@
 
 
 
-
 ## Publishing Platforms
 
 The platforms publications will be published on:
@@ -50,7 +49,18 @@ The platforms publications will be published on:
 > with a minimum amount being the cost of a cup of espresso...$5.00 CAD.
 
 
+
 ## Current Research
 
-- [Optimizing Pricing Strategy with Royalty Constraints](/research/MK2740US)
+#### [Optimizing Pricing Strategy with Royalty Constraints](/research/MK2740US)
 
+**Publication Date:** TBD
+
+**Research Areas:** Optimization • Publishing Economics
+
+**Key Contributions:**
+- Nonlinear optimization problem formulation for pricing strategy
+- Implementation using Sequential Least Squares Programming (SLSQP) and Trust-Region Constrained optimization
+- Transparent, data-driven pricing methodology for digital and print platforms
+
+**Status:** In Progress
