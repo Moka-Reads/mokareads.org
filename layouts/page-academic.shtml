@@ -1,0 +1,357 @@
+<extend template="base.shtml">
+<title id="title" :text="$page.title"></title>
+<head id="head">
+  <style>
+    /* Academic Paper Site Styling */
+    #academic-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2em 1em;
+      animation: fadeIn 0.4s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Header */
+    .academic-header {
+      border-bottom: 2px solid #dfc28a;
+      padding-bottom: 1em;
+      margin-bottom: 2em;
+    }
+
+    .academic-header h1 {
+      font-size: 2.2rem;
+      color: #f6e6c8;
+      margin: 0;
+      font-weight: normal;
+      letter-spacing: 0.5px;
+    }
+
+    .academic-header .subtitle {
+      color: #bbb;
+      font-size: 0.95rem;
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+
+    /* Section Headers */
+    #academic-page h2 {
+      color: #dfc28a;
+      font-size: 1.6rem;
+      border-bottom: 1px solid rgba(223, 194, 138, 0.3);
+      padding-bottom: 0.5em;
+      margin: 2em 0 1em 0;
+      font-weight: normal;
+      text-align: left;
+      letter-spacing: 0.5px;
+    }
+
+    #academic-page h3 {
+      color: #f6e6c8;
+      font-size: 1.2rem;
+      margin: 1.5em 0 1em 0;
+      font-weight: normal;
+      text-align: left;
+      opacity: 0.9;
+    }
+
+    /* Paper Entries */
+    #academic-page p strong:first-child {
+      display: block;
+      color: #f6e6c8;
+      font-size: 1.15rem;
+      margin: 1.5em 0 0.3em 0;
+      line-height: 1.4;
+    }
+
+    #academic-page p em {
+      color: #999;
+      font-style: italic;
+      display: block;
+      margin: 0.2em 0 0.5em 0;
+      font-size: 0.95rem;
+    }
+
+    /* Status line */
+    #academic-page p:has(em):has(+ p:starts-with("Keywords:")) {
+      margin-bottom: 0.3em;
+    }
+
+    #academic-page p[data-status] {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin: 0.3em 0;
+    }
+
+    /* Keywords */
+    #academic-page p:has(code) {
+      margin: 0.5em 0 1em 0;
+      line-height: 1.8;
+    }
+
+    #academic-page code {
+      background: rgba(223, 194, 138, 0.1);
+      border: 1px solid rgba(223, 194, 138, 0.2);
+      color: #dfc28a;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: "JetBrains Mono", monospace;
+      margin-right: 0.5em;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    #academic-page code:hover {
+      background: rgba(223, 194, 138, 0.2);
+      border-color: #dfc28a;
+    }
+
+    /* Abstracts */
+    #academic-page blockquote {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid rgba(223, 194, 138, 0.4);
+      margin: 1em 0 1.5em 0;
+      padding: 1em 1.5em;
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-radius: 0 4px 4px 0;
+    }
+
+    #academic-page blockquote p {
+      margin: 0;
+    }
+
+    #academic-page blockquote strong {
+      color: #dfc28a;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.5em;
+    }
+
+    /* Paper links */
+    #academic-page p a {
+      color: #dfc28a;
+      text-decoration: none;
+      font-weight: normal;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    #academic-page p a:hover {
+      color: #f6e6c8;
+      border-bottom-color: #f6e6c8;
+    }
+
+    #academic-page p:has(a[href*="/research/"]) {
+      margin: 1em 0 1.5em 0;
+      font-size: 0.95rem;
+    }
+
+    #academic-page p:has(a[href*="/research/"]) a {
+      margin-right: 1.5em;
+      display: inline-block;
+      padding: 0.3em 0;
+    }
+
+    /* Horizontal rules */
+    #academic-page hr {
+      border: none;
+      border-top: 1px solid rgba(223, 194, 138, 0.2);
+      margin: 2em 0;
+    }
+
+    /* Lists in research interests */
+    #academic-page ul {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0;
+    }
+
+    #academic-page ul li {
+      padding: 0.6em 0;
+      color: #ddd;
+      line-height: 1.6;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    #academic-page ul li:last-child {
+      border-bottom: none;
+    }
+
+    #academic-page ul li strong {
+      color: #f6e6c8;
+      font-weight: bold;
+      display: inline-block;
+      min-width: 180px;
+    }
+
+    /* Working papers list */
+    #academic-page ol {
+      margin: 1em 0;
+      padding-left: 0;
+      counter-reset: paper-counter;
+      list-style: none;
+    }
+
+    #academic-page ol li {
+      position: relative;
+      padding-left: 2.5em;
+      margin-bottom: 1.2em;
+      color: #ddd;
+      line-height: 1.6;
+      counter-increment: paper-counter;
+    }
+
+    #academic-page ol li::before {
+      content: counter(paper-counter) ".";
+      position: absolute;
+      left: 0;
+      color: #dfc28a;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    #academic-page ol li strong {
+      color: #f6e6c8;
+    }
+
+    #academic-page ol li em {
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* Technical expertise section */
+    #academic-page p strong:contains("Programming Languages:"),
+    #academic-page p strong:contains("Mathematical Software:"),
+    #academic-page p strong:contains("Frameworks"),
+    #academic-page p strong:contains("Specializations:") {
+      color: #dfc28a;
+      display: inline-block;
+      margin-right: 0.5em;
+      min-width: 160px;
+    }
+
+    /* Publication platforms section */
+    #academic-page p strong:contains("Exclusive Research"),
+    #academic-page p strong:contains("General Publications:") {
+      display: block;
+      color: #dfc28a;
+      margin: 1em 0 0.5em 0;
+      font-size: 1.05rem;
+    }
+
+    /* Contact section */
+    #academic-page p:has(strong:contains("ORCID:")) {
+      background: rgba(223, 194, 138, 0.05);
+      border: 1px solid rgba(223, 194, 138, 0.2);
+      border-radius: 6px;
+      padding: 1em 1.5em;
+      margin: 1.5em 0;
+      text-align: center;
+    }
+
+    #academic-page p:has(strong:contains("ORCID:")) strong {
+      color: #dfc28a;
+      margin: 0 0.3em;
+    }
+
+    #academic-page p:has(strong:contains("ORCID:")) a {
+      color: #dfc28a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+      margin: 0 0.3em;
+    }
+
+    #academic-page p:has(strong:contains("ORCID:")) a:hover {
+      color: #f6e6c8;
+      border-bottom-color: #f6e6c8;
+    }
+
+    /* Last updated */
+    #academic-page p em:contains("Last updated:") {
+      display: block;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 3em;
+      padding-top: 2em;
+      border-top: 1px solid rgba(223, 194, 138, 0.2);
+    }
+
+    /* Special block styling */
+    #academic-page .block {
+      background: rgba(223, 194, 138, 0.08);
+      border: 1px solid rgba(223, 194, 138, 0.3);
+      border-radius: 6px;
+      padding: 1em 1.5em;
+      margin: 1.5em 0;
+    }
+
+    #academic-page .block h1 {
+      display: none;
+    }
+
+    #academic-page .block p {
+      margin: 0.5em 0;
+      color: #eee;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      #academic-page {
+        padding: 1em 0.5em;
+      }
+
+      .academic-header h1 {
+        font-size: 1.8rem;
+      }
+
+      #academic-page ul li strong {
+        display: block;
+        margin-bottom: 0.3em;
+        min-width: auto;
+      }
+
+      #academic-page p:has(a[href*="/research/"]) a {
+        display: block;
+        margin: 0.5em 0;
+      }
+    }
+
+    /* Print-friendly styles */
+    @media print {
+      #academic-page {
+        background: white;
+        color: black;
+      }
+
+      #academic-page a {
+        color: black;
+        text-decoration: underline;
+      }
+
+      #academic-page code {
+        background: #f0f0f0;
+        color: black;
+        border-color: #ccc;
+      }
+    }
+  </style>
+</head>
+<div id="content">
+  <div id="academic-page">
+    <div class="academic-header">
+      <h1>MoKa Reads <span :text="$page.title"></span></h1>
+      <div class="subtitle">Research Papers, Technical Publications, and Academic Work</div>
+    </div>
+    <div :html="$page.content()"></div>
+  </div>
+</div>

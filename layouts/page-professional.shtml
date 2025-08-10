@@ -1,0 +1,370 @@
+<extend template="base.shtml">
+<title id="title" :text="$page.title"></title>
+<head id="head">
+  <style>
+    /* Professional Page Layout Styles */
+    #professional-page {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header Styling */
+    .page-header {
+      text-align: center;
+      margin: 2em 0 3em 0;
+      position: relative;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #dfc28a, #f6e6c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 0.5em;
+    }
+
+    .page-header::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #dfc28a, transparent);
+      margin: 1em auto;
+    }
+
+    /* Section Headers */
+    #professional-page h2 {
+      font-size: 2rem;
+      color: #dfc28a;
+      text-align: left;
+      border: none;
+      position: relative;
+      padding-left: 0;
+      margin: 2.5em 0 1.5em 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    #professional-page h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #dfc28a, transparent);
+    }
+
+    /* H3 Headers - Research Topics */
+    #professional-page h3 {
+      background: linear-gradient(135deg, rgba(30,30,30,0.95), rgba(50,50,50,0.95));
+      border: 1px solid rgba(223, 194, 138, 0.3);
+      border-left: 4px solid #dfc28a;
+      border-radius: 12px;
+      padding: 1.2em 1.5em;
+      margin: 2em 0 1em 0;
+      color: #f6e6c8 !important;
+      font-size: 1.5rem;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #professional-page h3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #dfc28a, #f6e6c8);
+      opacity: 0.8;
+    }
+
+    #professional-page h3:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      border-color: #dfc28a;
+    }
+
+    /* Research Sections - Special styling for specific h3s */
+    #professional-page h3:has(+ p > strong:first-child:contains("Status:")) {
+      background: linear-gradient(135deg, rgba(40,35,25,0.95), rgba(60,50,35,0.95));
+      border-color: #dfc28a;
+      border-width: 2px;
+    }
+
+    /* Strong text styling */
+    #professional-page strong {
+      color: #dfc28a;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    /* Lists with strong labels */
+    #professional-page p > strong:first-child {
+      display: inline-block;
+      margin-bottom: 0.5em;
+      font-size: 1.1rem;
+      color: #f6e6c8;
+    }
+
+    /* List styling */
+    #professional-page ul {
+      background: rgba(223, 194, 138, 0.05);
+      border-left: 3px solid rgba(223, 194, 138, 0.3);
+      border-radius: 8px;
+      padding: 1em 1.5em;
+      margin: 1em 0;
+      list-style: none;
+    }
+
+    #professional-page ul li {
+      position: relative;
+      padding-left: 1.5em;
+      margin-bottom: 0.8em;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    #professional-page ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #dfc28a;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    /* Special styling for lists with strong text */
+    #professional-page ul li strong {
+      color: #f6e6c8;
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+
+    /* Paragraph styling */
+    #professional-page p {
+      color: #ddd;
+      line-height: 1.7;
+      margin: 1em 0;
+    }
+
+    /* Research status line */
+    #professional-page p:has(strong:first-child:contains("Status:")) {
+      background: rgba(223, 194, 138, 0.08);
+      border-radius: 8px;
+      padding: 1em 1.5em;
+      margin: 1em 0;
+      border-left: 4px solid #dfc28a;
+      font-size: 1rem;
+    }
+
+    #professional-page p:has(strong:first-child:contains("Research Areas:")) {
+      color: #bbb;
+      font-size: 1.05rem;
+      margin: 1em 0;
+      padding: 0.8em 1.5em;
+      background: rgba(223, 194, 138, 0.05);
+      border-radius: 6px;
+    }
+
+    #professional-page p:has(strong:first-child:contains("Key Contributions:")) + ul {
+      background: rgba(223, 194, 138, 0.08);
+      border-left: 4px solid #dfc28a;
+      margin-top: -0.5em;
+    }
+
+    #professional-page p:has(strong:first-child:contains("Research Progress:")) {
+      background: linear-gradient(90deg, rgba(223, 194, 138, 0.2), rgba(223, 194, 138, 0.05));
+      border: 1px solid rgba(223, 194, 138, 0.3);
+      border-radius: 8px;
+      padding: 1em 1.5em;
+      text-align: center;
+      font-weight: bold;
+      margin: 1.5em 0;
+    }
+
+    /* Links styling */
+    #professional-page a {
+      color: #dfc28a;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    #professional-page a:hover {
+      color: #f6e6c8;
+      text-shadow: 0 0 8px rgba(223, 194, 138, 0.5);
+    }
+
+    /* Special link buttons */
+    #professional-page p:has(a[href="/research/MK2740US"]) {
+      text-align: center;
+      margin: 2em 0;
+    }
+
+    #professional-page a[href="/research/MK2740US"] {
+      background: linear-gradient(135deg, #dfc28a, #f6e6c8);
+      color: #2a2a2a;
+      padding: 0.6em 1.5em;
+      border-radius: 25px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(223, 194, 138, 0.3);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    #professional-page a[href="/research/MK2740US"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(223, 194, 138, 0.4);
+    }
+
+    /* Platform sections */
+    #professional-page h3:contains("Primary Platform"),
+    #professional-page h3:contains("Distribution Partners") {
+      background: linear-gradient(135deg, rgba(40,40,40,0.9), rgba(60,60,60,0.9));
+      font-size: 1.3rem;
+      padding: 1em 1.5em;
+    }
+
+    /* Block quotes / Notice boxes */
+    #professional-page .block {
+      background: linear-gradient(135deg, rgba(223, 194, 138, 0.1), rgba(223, 194, 138, 0.05));
+      border: 2px solid #dfc28a !important;
+      border-radius: 12px;
+      padding: 1.5em;
+      margin: 2em 0;
+      box-shadow: 0 4px 12px rgba(223, 194, 138, 0.2);
+    }
+
+    #professional-page .block.notice {
+      background: linear-gradient(135deg, rgba(223, 194, 138, 0.15), rgba(223, 194, 138, 0.08));
+    }
+
+    #professional-page .block h1 {
+      background: transparent !important;
+      border: none !important;
+      color: #dfc28a !important;
+      font-size: 1.3rem !important;
+      padding: 0 !important;
+      margin-bottom: 0.8em !important;
+      text-align: left;
+    }
+
+    #professional-page .block p {
+      color: #eee;
+      margin: 0.5em 0;
+      padding: 0;
+    }
+
+    /* Connect section at bottom */
+    #professional-page h2:last-of-type + p {
+      background: linear-gradient(135deg, rgba(30,30,30,0.95), rgba(50,50,50,0.95));
+      border-radius: 16px;
+      padding: 2em;
+      text-align: center;
+      margin: 2em 0;
+      border: 1px solid rgba(223, 194, 138, 0.3);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      font-size: 1.1rem;
+    }
+
+    #professional-page p:last-child {
+      text-align: center;
+      margin: 2em 0;
+      font-size: 1.1rem;
+    }
+
+    #professional-page p:last-child strong {
+      margin: 0 1em;
+    }
+
+    #professional-page p:last-child a {
+      background: linear-gradient(135deg, #dfc28a, #f6e6c8);
+      color: #2a2a2a;
+      padding: 0.8em 2em;
+      border-radius: 25px;
+      display: inline-block;
+      margin: 0.5em;
+      box-shadow: 0 4px 12px rgba(223, 194, 138, 0.3);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    #professional-page p:last-child a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(223, 194, 138, 0.4);
+    }
+
+    #professional-page p:last-child a[href="/proj"] {
+      background: transparent;
+      color: #dfc28a;
+      border: 2px solid #dfc28a;
+      box-shadow: none;
+    }
+
+    #professional-page p:last-child a[href="/proj"]:hover {
+      background: rgba(223, 194, 138, 0.1);
+    }
+
+    /* Animation for cards */
+    #professional-page h3,
+    #professional-page .block {
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+
+    #professional-page h3:nth-of-type(1) { animation-delay: 0.1s; }
+    #professional-page h3:nth-of-type(2) { animation-delay: 0.2s; }
+    #professional-page h3:nth-of-type(3) { animation-delay: 0.3s; }
+    #professional-page h3:nth-of-type(4) { animation-delay: 0.4s; }
+    #professional-page h3:nth-of-type(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      #professional-page h2 {
+        font-size: 1.6rem;
+      }
+
+      #professional-page h3 {
+        font-size: 1.2rem;
+        padding: 1em;
+      }
+
+      #professional-page p:last-child a {
+        display: block;
+        width: 100%;
+        margin: 0.5em 0;
+      }
+    }
+  </style>
+</head>
+<div id="content">
+  <div id="professional-page">
+    <div class="page-header">
+      <h1>MoKa Reads <span :text="$page.title"></span></h1>
+    </div>
+    <div :html="$page.content()"></div>
+  </div>
+</div>

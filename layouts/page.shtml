@@ -10,247 +10,83 @@
        margin-top: 0;
      }
 
-		#page h2, #page h3 {
-			text-align: left;
-		}
+    #page h2, #page h3 {
+      text-align: left;
+    }
 
-		#page h2 {
-			font-size: 1.7rem;
-			border: none;
-			background: linear-gradient(135deg, rgba(223, 194, 138, 0.15), rgba(223, 194, 138, 0.25));
-			border-left: 4px solid #dfc28a;
-			border-radius: 8px;
-			margin-top: 2em;
-			margin-bottom: 0;
-			cursor: pointer;
-			position: relative;
-			padding: 1em 3em 1em 1.5em;
-			transition: all 0.3s ease;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-		}
+    #page h2 {
+      font-size: 1.7rem;
+      color: #dfc28a;
+      border: none;
+      border-bottom: 1px solid rgba(223, 194, 138, 0.3);
+      margin-top: 2em;
+      margin-bottom: 1em;
+      padding-bottom: 0.5em;
+    }
 
-		#page h2:hover {
-			background: linear-gradient(135deg, rgba(223, 194, 138, 0.25), rgba(223, 194, 138, 0.35));
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-			transform: translateY(-1px);
-		}
+    #page h3 {
+      font-size: 1.5rem;
+      color: #f6e6c8;
+      margin-top: 1.5em;
+      margin-bottom: 0.8em;
+    }
 
-		#page h2::after {
-			content: "▼";
-			position: absolute;
-			right: 1.2em;
-			top: 50%;
-			transform: translateY(-50%);
-			transition: transform 0.3s ease;
-			color: #dfc28a;
-			font-size: 1.2em;
-			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-		}
+    #page h4 {
+      font-size: 1.2rem;
+      color: #eee;
+      margin-top: 1.2em;
+      margin-bottom: 0.6em;
+    }
 
-		#page h2.collapsed::after {
-			transform: translateY(-50%) rotate(-90deg);
-		}
+    #page ul {
+      margin-left: 1.5em;
+    }
 
-		.dropdown-content {
-			overflow: hidden;
-			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			background: linear-gradient(180deg, rgba(223, 194, 138, 0.05), rgba(223, 194, 138, 0.02));
-			border-radius: 0 0 8px 8px;
-			margin-bottom: 1em;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-		}
+    #page li {
+      margin-bottom: 0.3em;
+      line-height: 1.5;
+    }
 
-		.dropdown-content.collapsed {
-			max-height: 0;
-			opacity: 0;
-			margin-bottom: 0;
-			box-shadow: none;
-		}
+    #page p {
+      line-height: 1.6;
+      margin: 1em 0;
+    }
 
-		.dropdown-content.expanded {
-			max-height: 2000px;
-			opacity: 1;
-			padding: 1.5em;
-			border-left: 4px solid rgba(223, 194, 138, 0.3);
-		}
+    #page blockquote {
+      border-left: 3px solid rgba(223, 194, 138, 0.4);
+      margin: 1em 0;
+      padding-left: 1em;
+      color: #ddd;
+    }
 
-		.dropdown-content h3 {
-			color: #dfc28a !important;
-			font-size: 1.4rem !important;
-			margin-top: 1.2em !important;
-			margin-bottom: 0.8em !important;
-			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-		}
+    #page a {
+      color: #dfc28a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
 
-		.dropdown-content h3:first-child {
-			margin-top: 0.5em !important;
-		}
+    #page a:hover {
+      border-bottom-color: #dfc28a;
+    }
 
-		.dropdown-content ul {
-			margin-left: 1em;
-		}
+    /* Simple block styling without boxes */
+    #page .block {
+      margin: 1.5em 0;
+      padding: 0;
+      border: none;
+      background: none;
+    }
 
-		.dropdown-content li {
-			margin-bottom: 0.3em;
-			line-height: 1.5;
-		}
+    #page .block h1 {
+      display: none;
+    }
 
-		.dropdown-content .block {
-			margin-top: 1.5em;
-			border-radius: 6px;
-			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-		}
-
-		/* Research Paper Card Styling */
-		.dropdown-content h4 {
-			background: linear-gradient(135deg, rgba(223, 194, 138, 0.15), rgba(223, 194, 138, 0.25));
-			border: 1px solid rgba(223, 194, 138, 0.3);
-			border-left: 4px solid #dfc28a;
-			border-radius: 8px;
-			padding: 1.2em 1.5em;
-			margin: 1.5em 0 1em 0;
-			font-size: 1.3rem !important;
-			color: #eee !important;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-			transition: all 0.3s ease;
-		}
-
-		.dropdown-content h4:hover {
-			transform: translateY(-2px);
-			box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-		}
-
-		.dropdown-content h4 a {
-			color: #dfc28a;
-			text-decoration: none;
-			font-weight: bold;
-		}
-
-		.dropdown-content h4 a:hover {
-			text-decoration: underline;
-		}
-
-		/* Research metadata styling */
-		.dropdown-content p strong {
-			color: #dfc28a;
-			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-		}
-
-		/* Publication date and research areas */
-		.dropdown-content h4 + p {
-			background: rgba(223, 194, 138, 0.08);
-			border-radius: 6px;
-			padding: 0.8em 1.2em;
-			margin: 0.5em 0;
-			border-left: 3px solid rgba(223, 194, 138, 0.4);
-			font-size: 0.95em;
-		}
-
-		/* Abstract section */
-		.dropdown-content p:nth-of-type(3) {
-			background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(223, 194, 138, 0.05));
-			border-radius: 6px;
-			padding: 1.2em;
-			margin: 1em 0;
-			font-style: italic;
-			line-height: 1.7;
-			border-left: 3px solid rgba(223, 194, 138, 0.3);
-			box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-		}
-
-		/* Key contributions list */
-		.dropdown-content ul {
-			background: rgba(223, 194, 138, 0.05);
-			border-radius: 6px;
-			padding: 1em 1.5em;
-			margin: 1em 0;
-			border-left: 3px solid rgba(223, 194, 138, 0.2);
-			list-style: none;
-		}
-
-		.dropdown-content ul li {
-			margin-bottom: 0.6em;
-			line-height: 1.5;
-			position: relative;
-			padding-left: 0.5em;
-		}
-
-		.dropdown-content ul li::before {
-			content: "▸";
-			color: #dfc28a;
-			font-weight: bold;
-			position: absolute;
-			left: -0.8em;
-		}
-
-		/* Status line */
-		.dropdown-content h4 ~ p:last-child {
-			background: linear-gradient(135deg, rgba(223, 194, 138, 0.1), rgba(223, 194, 138, 0.2));
-			border: 1px solid rgba(223, 194, 138, 0.3);
-			border-radius: 6px;
-			padding: 0.8em 1.2em;
-			margin: 1.5em 0 0 0;
-			text-align: center;
-			font-weight: bold;
-			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-		}
-
-		#page h3 {
-			font-size: 1.5rem;
-		}
-
-		#page h4 {
-			font-size: 1rem;
-		}
+    #page .block p {
+      margin: 0.5em 0;
+    }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const h2Elements = document.querySelectorAll('#page h2');
-
-      h2Elements.forEach(function(h2) {
-        // Create wrapper for content after h2
-        const wrapper = document.createElement('div');
-        wrapper.className = 'dropdown-content collapsed';
-
-        let nextElement = h2.nextElementSibling;
-        const elementsToWrap = [];
-
-        // Collect all elements until next h2 or end
-        while (nextElement && nextElement.tagName !== 'H2') {
-          elementsToWrap.push(nextElement);
-          nextElement = nextElement.nextElementSibling;
-        }
-
-        // Move elements into wrapper
-        elementsToWrap.forEach(function(element) {
-          wrapper.appendChild(element);
-        });
-
-        // Insert wrapper after h2
-        h2.parentNode.insertBefore(wrapper, h2.nextSibling);
-        h2.classList.add('collapsed');
-
-        // Add click handler
-        h2.addEventListener('click', function() {
-          const isCollapsed = wrapper.classList.contains('collapsed');
-
-          if (isCollapsed) {
-            wrapper.classList.remove('collapsed');
-            wrapper.classList.add('expanded');
-            h2.classList.remove('collapsed');
-          } else {
-            wrapper.classList.remove('expanded');
-            wrapper.classList.add('collapsed');
-            h2.classList.add('collapsed');
-          }
-        });
-      });
-    });
-  </script>
   <br>
-  <h1
-    class="title"
-  >MoKa Reads
-    <span :text="$page.title"></span></h1>
+  <h1 class="title">MoKa Reads <span :text="$page.title"></span></h1>
   <div id="page" :html="$page.content()"></div>
 </div>

@@ -1,12 +1,14 @@
 ---
-.title = "Donate",
+.title = "Support Us",
 .date = @date("2024-12-29T00:00:00"),
 .author = "Mustafif Khan",
 .layout = "page.shtml",
 .draft = false,
 ---
 
-There are many ways to support the MoKa Reads Collective and its projects. Here are a few ways you can help:
+## Financial Support
+
+There are many ways to support the MoKa Reads Collective and its projects financially. Here are a few ways you can help:
 
 - [MoKa Reads Sponsorship (thru MoKa Reads Shop)](https://shop.mokareads.org/l/rrcgh?layout=profile)
 - [GitHub Sponsorship](https://github.com/sponsors/Moka-Reads)

@@ -30,11 +30,13 @@
       •
       <a href="https://shop.mokareads.org">Shop</a>
       •
-      <a href="$site.page('pages').link()">Pages</a>
+      <a href="$site.page('pages').link()">Open Pages</a>
       •
       <a href="$site.page('proj').link()">Projects</a>
       <!-- •
       <a href="$site.page('papers').link()">Papers</a> -->
+      •
+      <a href="$site.page('contact').link()">Contact</a>
       •
       <a href="$site.page('support').link()">Donate</a>
     </nav>

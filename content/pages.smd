@@ -1,66 +1,68 @@
 ---
-.title = "Pages",
+.title = "Open Pages",
 .date = @date("2024-12-29T00:00:00"),
 .author = "Mustafif Khan",
-.layout = "page.shtml",
+.layout = "page-academic.shtml",
 .draft = false,
 ---
 
-## Research Topics and Interests
-
-### Mathematics
-- Numerical Analysis
-- Financial Mathematics
-  - Computational Methods
-  - Machine Learning
-- Linear Algebra
-
-### Computer Science
-- Compiler Development
-- Operating Systems
-- Memory Safety/Management
-- Languages include:
-  - Rust
-  - Zig
-  - C/C++
-  - Swift
-  - Mojo
-
-### Cryptocurrency
-- Objective look at Cryptocurrencies in:
-  - Economic perspective as a disruptive technology
-  - Ethically as an unregulated market
-  - Ideals of decentralization and anonymity
-
-
-
-## Publishing Platforms
-
-The platforms publications will be published on:
-- MoKa Reads Shop (Ebook)
-- Google Books (Ebook)
-- Amazon (Ebook and Paperback)
-- Leanpub (Ebook)
-- Kobo (Ebook)
-- Barnes and Noble (Ebook and Print)
-
-># [Research/Academic Paper Exclusivity]($block.attrs('error'))
-> Research/Academic papers will only be available for purchase on the MoKa Reads Shop under a pay-what-you-want model
-> with a minimum amount being the cost of a cup of espresso...$5.00 CAD.
-
-
-
 ## Current Research
 
-#### [Optimizing Pricing Strategy with Royalty Constraints](/research/MK2740US)
+### Optimizing Pricing Strategy with Royalty Constraints
+**Mustafif Khan**
+*Status: In Progress • Expected 2025*
 
-**Publication Date:** TBD
+This research develops a comprehensive nonlinear optimization framework for determining optimal pricing strategies in multi-platform publishing environments with complex royalty structures. The work addresses the challenge of simultaneous pricing across multiple distribution channels while respecting platform-specific royalty constraints.
 
-**Research Areas:** Optimization • Publishing Economics
-
-**Key Contributions:**
+**Key Focus Areas:**
 - Nonlinear optimization problem formulation for pricing strategy
-- Implementation using Sequential Least Squares Programming (SLSQP) and Trust-Region Constrained optimization
+- Implementation using Sequential Least Squares Programming (SLSQP)
+- Trust-Region Constrained optimization methods
 - Transparent, data-driven pricing methodology for digital and print platforms
 
-**Status:** In Progress
+[View Current Progress](/research/MK2740US)
+
+---
+
+## Research Interests
+
+### Mathematics & Optimization
+- **Numerical Analysis** — Computational methods for mathematical problems
+- **Financial Mathematics** — Quantitative modeling and analysis
+- **Optimization Theory** — Linear and nonlinear programming with constraints
+- **Machine Learning Applications** — Statistical learning in optimization
+
+### Systems Programming
+- **Compiler Development** — Language design and optimization techniques
+- **Operating Systems** — System architecture and memory management
+- **Memory Safety** — Safe systems programming in Rust and Zig
+
+### Distributed Systems
+- **Cryptocurrency** — Economic and technical analysis of blockchain systems
+- **Decentralization** — Distributed consensus and protocol design
+- **Market Dynamics** — Statistical analysis of cryptocurrency markets
+
+## Technical Background
+
+**Primary Languages:** Rust, Zig, C/C++, Swift, Mojo
+**Mathematical Tools:** Python (NumPy, SciPy), Julia, MATLAB
+**Areas of Focus:** Numerical optimization, systems programming, compiler construction
+
+## Publications & Distribution
+
+### Research Papers
+Research papers and academic work are exclusively available through **MoKa Reads Shop** under a pay-what-you-want model (minimum $5.00 CAD).
+
+### Books & Educational Content
+General publications are distributed through:
+- Amazon (Kindle & Paperback)
+- Google Books
+- Barnes & Noble
+- Kobo
+- Leanpub
+
+## Connect
+
+For questions about research, collaboration opportunities, or general inquiries:
+
+[Contact](/contact) • [View Projects](/proj) • [GitHub](https://github.com/mustafif)

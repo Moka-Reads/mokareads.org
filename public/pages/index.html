@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head id="head">
+    <meta charset="UTF-8">
+    <meta name="description" content="MoKa Reads: Open Education and Research">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Open Pages | MoKa Reads">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title id="title">
+      Open Pages
+      - MoKa Reads
+    </title>
+    <link rel="stylesheet" type="text/css" href="/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/fira_code.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/highlight.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+  <style>
+    /* Academic Paper Site Styling */
+    #academic-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2em 1em;
+      animation: fadeIn 0.4s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Header */
+    .academic-header {
+      border-bottom: 2px solid #dfc28a;
+      padding-bottom: 1em;
+      margin-bottom: 2em;
+    }
+
+    .academic-header h1 {
+      font-size: 2.2rem;
+      color: #f6e6c8;
+      margin: 0;
+      font-weight: normal;
+      letter-spacing: 0.5px;
+    }
+
+    .academic-header .subtitle {
+      color: #bbb;
+      font-size: 0.95rem;
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+
+    /* Section Headers */
+    #academic-page h2 {
+      color: #dfc28a;
+      font-size: 1.6rem;
+      border-bottom: 1px solid rgba(223, 194, 138, 0.3);
+      padding-bottom: 0.5em;
+      margin: 2em 0 1em 0;
+      font-weight: normal;
+      text-align: left;
+      letter-spacing: 0.5px;
+    }
+
+    #academic-page h3 {
+      color: #f6e6c8;
+      font-size: 1.2rem;
+      margin: 1.5em 0 1em 0;
+      font-weight: normal;
+      text-align: left;
+      opacity: 0.9;
+    }
+
+    /* Paper Entries */
+    #academic-page p strong:first-child {
+      display: block;
+      color: #f6e6c8;
+      font-size: 1.15rem;
+      margin: 1.5em 0 0.3em 0;
+      line-height: 1.4;
+    }
+
+    #academic-page p em {
+      color: #999;
+      font-style: italic;
+      display: block;
+      margin: 0.2em 0 0.5em 0;
+      font-size: 0.95rem;
+    }
+
+    /* Status line */
+    #academic-page p:has(em):has(+ p:starts-with("Keywords:")) {
+      margin-bottom: 0.3em;
+    }
+
+    #academic-page p[data-status] {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin: 0.3em 0;
+    }
+
+    /* Keywords */
+    #academic-page p:has(code) {
+      margin: 0.5em 0 1em 0;
+      line-height: 1.8;
+    }
+
+    #academic-page code {
+      background: rgba(223, 194, 138, 0.1);
+      border: 1px solid rgba(223, 194, 138, 0.2);
+      color: #dfc28a;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: "JetBrains Mono", monospace;
+      margin-right: 0.5em;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    #academic-page code:hover {
+      background: rgba(223, 194, 138, 0.2);
+      border-color: #dfc28a;
+    }
+
+    /* Abstracts */
+    #academic-page blockquote {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid rgba(223, 194, 138, 0.4);
+      margin: 1em 0 1.5em 0;
+      padding: 1em 1.5em;
+      color: #ddd;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-radius: 0 4px 4px 0;
+    }
+
+    #academic-page blockquote p {
+      margin: 0;
+    }
+
+    #academic-page blockquote strong {
+      color: #dfc28a;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 0.5em;
+    }
+
+    /* Paper links */
+    #academic-page p a {
+      color: #dfc28a;
+      text-decoration: none;
+      font-weight: normal;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    #academic-page p a:hover {
+      color: #f6e6c8;
+      border-bottom-color: #f6e6c8;
+    }
+
+    #academic-page p:has(a[href*="/research/"]) {
+      margin: 1em 0 1.5em 0;
+      font-size: 0.95rem;
+    }
+
+    #academic-page p:has(a[href*="/research/"]) a {
+      margin-right: 1.5em;
+      display: inline-block;
+      padding: 0.3em 0;
+    }
+
+    /* Horizontal rules */
+    #academic-page hr {
+      border: none;
+      border-top: 1px solid rgba(223, 194, 138, 0.2);
+      margin: 2em 0;
+    }
+
+    /* Lists in research interests */
+    #academic-page ul {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0;
+    }
+
+    #academic-page ul li {
+      padding: 0.6em 0;
+      color: #ddd;
+      line-height: 1.6;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    #academic-page ul li:last-child {
+      border-bottom: none;
+    }
+
+    #academic-page ul li strong {
+      color: #f6e6c8;
+      font-weight: bold;
+      display: inline-block;
+      min-width: 180px;
+    }
+
+    /* Working papers list */
+    #academic-page ol {
+      margin: 1em 0;
+      padding-left: 0;
+      counter-reset: paper-counter;
+      list-style: none;
+    }
+
+    #academic-page ol li {
+      position: relative;
+      padding-left: 2.5em;
+      margin-bottom: 1.2em;
+      color: #ddd;
+      line-height: 1.6;
+      counter-increment: paper-counter;
+    }
+
+    #academic-page ol li::before {
+      content: counter(paper-counter) ".";
+      position: absolute;
+      left: 0;
+      color: #dfc28a;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    #academic-page ol li strong {
+      color: #f6e6c8;
+    }
+
+    #academic-page ol li em {
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* Technical expertise section */
+    #academic-page p strong:contains("Programming Languages:"),
+    #academic-page p strong:contains("Mathematical Software:"),
+    #academic-page p strong:contains("Frameworks"),
+    #academic-page p strong:contains("Specializations:") {
+      color: #dfc28a;
+      display: inline-block;
+      margin-right: 0.5em;
+      min-width: 160px;
+    }
+
+    /* Publication platforms section */
+    #academic-page p strong:contains("Exclusive Research"),
+    #academic-page p strong:contains("General Publications:") {
+      display: block;
+      color: #dfc28a;
+      margin: 1em 0 0.5em 0;
+      font-size: 1.05rem;
+    }
+
+    /* Contact section */
+    #academic-page p:has(strong:contains("ORCID:")) {
+      background: rgba(223, 194, 138, 0.05);
+      border: 1px solid rgba(223, 194, 138, 0.2);
+      border-radius: 6px;
+      padding: 1em 1.5em;
+      margin: 1.5em 0;
+      text-align: center;
+    }
+
+    #academic-page p:has(strong:contains("ORCID:")) strong {
+      color: #dfc28a;
+      margin: 0 0.3em;
+    }
+
+    #academic-page p:has(strong:contains("ORCID:")) a {
+      color: #dfc28a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+      margin: 0 0.3em;
+    }
+
+    #academic-page p:has(strong:contains("ORCID:")) a:hover {
+      color: #f6e6c8;
+      border-bottom-color: #f6e6c8;
+    }
+
+    /* Last updated */
+    #academic-page p em:contains("Last updated:") {
+      display: block;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 3em;
+      padding-top: 2em;
+      border-top: 1px solid rgba(223, 194, 138, 0.2);
+    }
+
+    /* Special block styling */
+    #academic-page .block {
+      background: rgba(223, 194, 138, 0.08);
+      border: 1px solid rgba(223, 194, 138, 0.3);
+      border-radius: 6px;
+      padding: 1em 1.5em;
+      margin: 1.5em 0;
+    }
+
+    #academic-page .block h1 {
+      display: none;
+    }
+
+    #academic-page .block p {
+      margin: 0.5em 0;
+      color: #eee;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      #academic-page {
+        padding: 1em 0.5em;
+      }
+
+      .academic-header h1 {
+        font-size: 1.8rem;
+      }
+
+      #academic-page ul li strong {
+        display: block;
+        margin-bottom: 0.3em;
+        min-width: auto;
+      }
+
+      #academic-page p:has(a[href*="/research/"]) a {
+        display: block;
+        margin: 0.5em 0;
+      }
+    }
+
+    /* Print-friendly styles */
+    @media print {
+      #academic-page {
+        background: white;
+        color: black;
+      }
+
+      #academic-page a {
+        color: black;
+        text-decoration: underline;
+      }
+
+      #academic-page code {
+        background: #f0f0f0;
+        color: black;
+        border-color: #ccc;
+      }
+    }
+  </style>
+
+  </head>
+  <body>
+    <nav id="menu" class="centered">
+      <a href="/">Home</a>
+      •
+      <a href="https://blog.mokareads.org">Blog</a>
+      •
+      <a href="https://shop.mokareads.org">Shop</a>
+      •
+      <a href="/pages/">Pages</a>
+      •
+      <a href="/proj/">Projects</a>
+      <!-- •
+      <a href="$site.page('papers').link()">Papers</a> -->
+      •
+      <a href="/contact/">Contact</a>
+      •
+      <a href="/support/">Donate</a>
+    </nav>
+    <div id="content">
+    
+  <div id="academic-page">
+    <div class="academic-header">
+      <h1>MoKa Reads <span>Open Pages</span></h1>
+      <div class="subtitle">Research Papers, Technical Publications, and Academic Work</div>
+    </div>
+    <div><h2>Current Research</h2><h3>Optimizing Pricing Strategy with Royalty Constraints</h3><p><strong>Mustafif Khan</strong> <em>Status: In Progress • Expected 2025</em></p><p>This research develops a comprehensive nonlinear optimization framework for determining optimal pricing strategies in multi-platform publishing environments with complex royalty structures. The work addresses the challenge of simultaneous pricing across multiple distribution channels while respecting platform-specific royalty constraints.</p><p><strong>Key Focus Areas:</strong></p><ul><li>Nonlinear optimization problem formulation for pricing strategy</li><li>Implementation using Sequential Least Squares Programming (SLSQP)</li><li>Trust-Region Constrained optimization methods</li><li>Transparent, data-driven pricing methodology for digital and print platforms</li></ul><p><a href="/research/MK2740US/">View Current Progress</a></p><hr><h2>Research Interests</h2><h3>Mathematics & Optimization</h3><ul><li><strong>Numerical Analysis</strong> — Computational methods for mathematical problems</li><li><strong>Financial Mathematics</strong> — Quantitative modeling and analysis</li><li><strong>Optimization Theory</strong> — Linear and nonlinear programming with constraints</li><li><strong>Machine Learning Applications</strong> — Statistical learning in optimization</li></ul><h3>Systems Programming</h3><ul><li><strong>Compiler Development</strong> — Language design and optimization techniques</li><li><strong>Operating Systems</strong> — System architecture and memory management</li><li><strong>Memory Safety</strong> — Safe systems programming in Rust and Zig</li></ul><h3>Distributed Systems</h3><ul><li><strong>Cryptocurrency</strong> — Economic and technical analysis of blockchain systems</li><li><strong>Decentralization</strong> — Distributed consensus and protocol design</li><li><strong>Market Dynamics</strong> — Statistical analysis of cryptocurrency markets</li></ul><h2>Technical Background</h2><p><strong>Primary Languages:</strong> Rust, Zig, C/C++, Swift, Mojo <strong>Mathematical Tools:</strong> Python (NumPy, SciPy), Julia, MATLAB <strong>Areas of Focus:</strong> Numerical optimization, systems programming, compiler construction</p><h2>Publications & Distribution</h2><h3>Research Papers</h3><p>Research papers and academic work are exclusively available through <strong>MoKa Reads Shop</strong> under a pay-what-you-want model (minimum $5.00 CAD).</p><h3>Books & Educational Content</h3><p>General publications are distributed through:</p><ul><li>Amazon (Kindle & Paperback)</li><li>Google Books</li><li>Barnes & Noble</li><li>Kobo</li><li>Leanpub</li></ul><h2>Connect</h2><p>For questions about research, collaboration opportunities, or general inquiries:</p><p><a href="/contact/">Contact</a> • <a href="/proj/">View Projects</a> • <a href="https://github.com/mustafif" target="_blank">GitHub</a></p></div>
+  </div>
+
+    </div>
+  </body>
+</html>
